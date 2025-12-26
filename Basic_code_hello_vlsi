@@ -1,0 +1,14 @@
+BASIC CODE 
+`include "uvm_macros.svh"
+import uvm_pkg::*;
+
+module tb;
+  initial begin
+    $display("Hello VLSI");
+    `uvm_info("Top_tb", "Hello VLSI", UVM_LOW);
+  end
+endmodule
+
+OUTPUT:
+Hello VLSI
+# KERNEL: UVM_INFO /home/runner/testbench.sv(9) @ 0: reporter [Top_tb] Hello VLSI
