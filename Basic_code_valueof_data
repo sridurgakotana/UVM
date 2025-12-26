@@ -1,0 +1,17 @@
+`include "uvm_macros.svh"
+import uvm_pkg::*;
+
+module tb;
+  initial begin
+    int data=100;
+    #10
+    $display("Hello VLSI");
+    `uvm_info("Top_tb", "Hello VLSI", UVM_LOW);
+    `uvm_info("Top_tb", $sformatf("Value of Data=%0d",data), UVM_LOW);
+  end
+endmodule
+
+OUTPUT:
+ Hello VLSI
+# KERNEL: UVM_INFO /home/runner/testbench.sv(11) @ 10: reporter [Top_tb] Hello VLSI
+# KERNEL: UVM_INFO /home/runner/testbench.sv(12) @ 10: reporter [Top_tb] Value of Data=100
