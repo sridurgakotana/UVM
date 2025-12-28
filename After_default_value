@@ -1,0 +1,15 @@
+
+`include "uvm_macros.svh"
+import uvm_pkg::*;
+
+module tb;
+  initial begin
+    int verb;
+    uvm_top.set_report_verbosity_level(500);
+    verb=uvm_top.get_report_verbosity_level();
+    `uvm_info ("Verbosity",$sformatf("Default verbosity level=%0d", verb), UVM_LOW);
+             end
+             endmodule
+
+OUTPUT:
+UVM_INFO /home/runner/testbench.sv(12) @ 0: reporter [Verbosity] Default verbosity level=500
