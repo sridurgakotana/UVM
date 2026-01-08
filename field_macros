@@ -1,0 +1,30 @@
+
+`include "uvm_macros.svh"
+import uvm_pkg::*;
+class vlsi extends uvm_object;
+  
+  function new(string path="vlsi");
+    super.new(path);
+  endfunction
+  rand bit[7:0]a;
+  rand bit[7:0]b;
+  `uvm_object_utils_begin(vlsi)
+  `uvm_field_int(a,UVM_DEFAULT | UVM_BIN);
+  `uvm_field_int(b,UVM_DEFAULT | UVM_BIN);
+  `uvm_object_utils_end
+endclass
+
+module tb;
+  vlsi v;
+  initial begin 
+    v=new("vlsi");
+    v.randomize();
+    v.print(uvm_default_tree_printer);
+  end
+endmodule
+
+OUTPUT:
+vlsi: (vlsi@335) {
+# KERNEL:   a: 'b1000110 
+# KERNEL:   b: 'b10100101 
+# KERNEL: }
